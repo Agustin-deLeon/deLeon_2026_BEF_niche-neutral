@@ -33,15 +33,7 @@ This script includes:
 - Linear vs quadratic robustness analyses
 - Richness-restricted analyses (1–9 species)
 - Quantile regression analyses
-
-Main outputs:
-
-- `pendientes.lineal`
-- `pendientes.covariables`
-- `slopes_df`
-- `slopes_df_sat`
-- `slopes_df_sat_linear`
-- `slopes_covariates_q90`
+- Generation of Figs.S4-S13
 
 ---
 
@@ -49,27 +41,21 @@ Main outputs:
 
 Calculates annual functional diversity metrics (FRic, FEve, FDiv, FDis and Rao's Q) and performs mediation analyses relating community assembly, richness and functional diversity.
 
-Main outputs:
-
-- `observado`
-- `datos_sem`
-- `tabla_sem`
-
 ---
 
 ### 4. NST.R
 
 Calculates the Normalized Stochasticity Ratio (NST) under different null models and regional species pools, and compares NST with CATS estimates.
 
-Main outputs:
+This script includes:
 
-- `NST_out`
+- Generation of Figs.S1
 
 ---
 
 ### 5. Main_figures.R
 
-Generates all figures included in the main manuscript and Supplementary Information.
+Generates all figures included in the main manuscript and Figs.S2-S3.
 
 ---
 
@@ -98,19 +84,18 @@ The analyses require the following input datasets:
 - `br.xlsx`
 - `bm.xlsx`
 - `Traits.xlsx`
-- `traits_numerico_n.csv`
+- `traits_numeric.csv`
 - `Environmental.xlsx`
 - `Ambientales_resumen.xlsx`
+-  `Climatic.xlsx`
 
-Additional annual climatic variables are imported from:
-
-- `df_plot2`
+Dryad link where to find this datasets were shared exclusively with reviewers (NOT FOR PUBLICATION). Database will be published soon. 
 
 ---
 
 ## Software
 
-Analyses were performed in R (version X.X.X).
+Analyses were performed in R.
 
 Main packages:
 
