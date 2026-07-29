@@ -13,12 +13,6 @@ The analyses are organized into independent scripts that should be run sequentia
 
 Calculates the annual position of the metacommunity along the niche–neutral gradient using the Community Assembly via Trait Selection (CATS) framework.
 
-Main outputs:
-
-- `nn.1`
-- `bm.nuevo`
-- `br.muestreos`
-- `profundidad`
 
 ---
 
@@ -115,6 +109,6 @@ Main packages:
 
 ## Notes
 
-The primary manuscript results are based on the annual CATS estimates (`nn.1`) and the BEF estimates obtained from the environmental covariate models (`pendientes.covariables`).
+The primary manuscript results are based on the annual CATS estimates (`nn.1`, shared here as "CATS.csv") and the BEF estimates obtained from the environmental covariate models (`pendientes.covariables`).
 
 The remaining analyses are included as robustness tests and supplementary analyses.
