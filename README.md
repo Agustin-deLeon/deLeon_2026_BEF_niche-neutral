@@ -3,7 +3,7 @@
 This repository contains the code used in:
 
 de León et al. (in prep.)
-*Trait-based community assembly strengthens biodiversity–ecosystem functioning relationships in temporary ponds.*
+*Biodiversity-function relationship determined by the niche-neutral gradient of metacommunity assembly
 
 ## Repository structure
 
