@@ -13,6 +13,8 @@ The analyses are organized into independent scripts that should be run sequentia
 
 Imports and preprocesses trait datasets. This script converts trait variables to their appropriate formats, computes the functional PCoA used in the CATS analyses, and generates the processed objects required by all subsequent scripts.
 
+---
+
 ### 1. CATS.R
 
 Calculates the annual position of the metacommunity along the niche–neutral gradient using the Community Assembly via Trait Selection (CATS) framework.
