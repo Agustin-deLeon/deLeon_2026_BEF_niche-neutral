@@ -87,9 +87,19 @@ The analyses require the following input datasets:
 - `traits_numeric.csv`
 - `Environmental.xlsx`
 - `Ambientales_resumen.xlsx`
--  `Climatic.xlsx`
+-  `Climatic_variables.xlsx`
 
-Dryad link where to find this datasets were shared exclusively with reviewers (NOT FOR PUBLICATION). Database will be published soon. 
+The file `Climatic_variables.xlsx` is included in this repository. All remaining datasets are available through the Dryad repository shared exclusively with reviewers (NOT FOR PUBLICATION) and will become publicly available upon publication.
+
+---
+
+## Before running the analyses
+
+Before executing the scripts:
+
+- Update the working directory (or file paths) to match the directory structure on your local machine.
+- Ensure that all imported `.csv` and `.xlsx` files retain the filenames expected by the scripts (or modify the corresponding import statements accordingly).
+- Run the scripts sequentially, as several objects generated in earlier scripts are required by subsequent analyses.
 
 ---
 
