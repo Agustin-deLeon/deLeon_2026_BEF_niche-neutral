@@ -3,7 +3,8 @@
 This repository contains the code used in:
 
 de León et al. (in prep.)
-*Biodiversity-function relationship determined by the niche-neutral gradient of metacommunity assembly
+
+**Biodiversity-function relationship determined by the niche-neutral gradient of metacommunity assembly**
 
 ## Repository structure
 
