@@ -9,6 +9,9 @@ de León et al. (in prep.)
 
 The analyses are organized into independent scripts that should be run sequentially.
 
+
+---
+
 ### 0. Data_preprocessing.R
 
 Imports and preprocesses trait datasets. This script converts trait variables to their appropriate formats, computes the functional PCoA used in the CATS analyses, and generates the processed objects required by all subsequent scripts.
@@ -79,17 +82,20 @@ Main_figures.R
 
 ## Data requirements
 
-The analyses require the following input datasets:
+The analyses require the following raw input datasets:
 
 - `br.xlsx`
 - `bm.xlsx`
 - `Traits.xlsx`
-- `traits_numeric.csv`
 - `Environmental.xlsx`
 - `Ambientales_resumen.xlsx`
--  `Climatic_variables.xlsx`
+- `Climatic_variables.xlsx`
 
-The file `Climatic_variables.xlsx` is included in this repository. All remaining datasets are available through the Dryad repository shared exclusively with reviewers (NOT FOR PUBLICATION) and will become publicly available upon publication.
+Running `Data_preprocessing.R` generates the processed trait dataset required by subsequent analyses:
+
+- `traits_numerico_n.csv`
+
+`Climatic_variables.xlsx`, `br.xlsx`, `bm.xlsx`, `Traits.xlsx`, `Environmental.xlsx`, and `Ambientales_resumen.xlsx` are included in this repository (and https://doi.org/10.5061/dryad.12jm63z32) to allow reviewers to reproduce the analyses. These datasets are provided exclusively for the purpose of peer review and must **NOT** be distributed, reused, or cited **without permission from the corresponding author**. Public release of the datasets will occur upon publication through the appropriate data repository.
 
 ---
 
@@ -120,6 +126,7 @@ Main packages:
 - ggplot2
 - ape
 - vegan
+- lavaan
 
 ---
 
