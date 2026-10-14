@@ -416,7 +416,7 @@ ax_col <- "black"
 
 
 #=========================================================
-# B-C: Metacommunity species richness
+# A: Metacommunity species richness
 #=========================================================
 
 par(mfrow=c(1,1), mar=c(9,9,3,3))
@@ -464,17 +464,54 @@ lines(x.seq,pred[, "upr"],col = col_B,lty = 2,lwd = 1.5)
 
 
 #=========================================================
-# B-C: Path results
+# B-C: Functional diversity results
 #=========================================================
 
 # func_path has results from Path analyses, created in "Functional_diversity.R" 
 # plot_mediation is a function also created in the other script 
 # for visualizing path results
 
-#B
-plot_mediation(func_path, "FDis", "Functional dispersion")
+
+datos <- data.frame(R2.exp = nn.1$R2.exp, FDis = observado$FDis)
+datos <- na.omit(datos)
+
+mod <- lm(FDis ~ R2.exp, data = datos)
+summary(mod)
+
+x.seq <- seq(min(datos$R2.exp), max(datos$R2.exp), length.out = 200)
+pred <- predict(mod,
+  newdata = data.frame(R2.exp = x.seq),
+  interval = "confidence", level = 0.95)
+col_D <- "#D4A838"
+pt_D <- adjustcolor(col_D, alpha.f = 0.70)
+y_range <- range(c(datos$FDis, pred[, "lwr"], pred[, "upr"]))
+y_pad <- diff(y_range) * 0.10
+y_lim <- y_range + c(-y_pad, y_pad)
+par(mfrow = c(1,1), mar = c(9,9,3,3))
+plot(FDis ~ R2.exp, data = datos, ylab = "Functional dispersion",
+  xlab = " ",  ylim = y_lim, yaxs = "i", pch = 21, bg = pt_D,
+  col = "black",  lwd = 1, cex = 2.5, bty = "l",
+  col.axis = "black", col.lab = "black", cex.lab = 2, cex.axis = 1.5)
+mtext(
+  expression(atop(
+    "Variance in species occurrences",
+    paste("explained by traits (", R[plain(Traits)]^2, ")")
+  )),
+  side = 1, line = 6, cex = 2, col = "black")
+polygon(c(x.seq, rev(x.seq)),
+  c(pred[, "lwr"], rev(pred[, "upr"])),
+  border = NA, col = adjustcolor(col_D, alpha.f = 0.15))
+lines(x.seq, pred[, "fit"], col = col_D, lwd = 3)
+lines(x.seq, pred[, "lwr"], col = col_D, lty = 2, lwd = 1.5)
+lines(x.seq, pred[, "upr"],  col = col_D, lty = 2,  lwd = 1.5)
+points(datos$R2.exp, datos$FDis, pch = 21, bg = pt_D,
+  col = "black", lwd = 1, cex = 2.5)
+text(x = 0.3, y = 0.1875, "F(1,19): 30.52\np < 0.001\nR²: 0.62",
+  cex = 1.8, pos = 3,  col = "black")
+
 #C
-plot_mediation(func_path, "FEve", "Functional evenness")
+plot_mediation(func_path, "FDis", "Functional dispersion")
+
 
 
 
